@@ -1,0 +1,13 @@
+name: First WorkFlow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Dir
+        uses: actions\checkout@v3
+      - name: Print ENV Varibales
+        run: printenv
