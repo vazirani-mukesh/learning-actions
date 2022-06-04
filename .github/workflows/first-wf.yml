@@ -6,6 +6,9 @@ on:
       - created
       - edited
       - deleted
+    lables:
+      - documentation
+      - bug
   
 
 jobs:
