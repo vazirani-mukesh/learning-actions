@@ -1,10 +1,11 @@
 name: First WorkFlow
 
 on:
-  issue_comment:
+  pull_request_review:
     types:
+      - submitted
       - edited
-      - deleted
+      - dismissed
   
 
 jobs:
