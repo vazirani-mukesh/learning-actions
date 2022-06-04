@@ -7,6 +7,7 @@ on:
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    if: ${{ github.event.client_payload.environment }} == 'dev'
     steps:
       - name: Checkout Dir
         uses: actions/checkout@v3
@@ -16,6 +17,6 @@ jobs:
       - name: PWSH Shell
         run: Get-ChildItem
         shell: pwsh
-      - name: Print ENV Varibales
-        run: printenv
+      - name: Print Payload Varibales
+        run: ${{ github.event.client_payload }}
         shell: bash
