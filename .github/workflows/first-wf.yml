@@ -2,7 +2,7 @@ name: First WorkFlow
 
 on:
   schedule:
-    - cron: 24/5 * * * *
+    - cron: 0/5 * * * *
 
 jobs:
   my-job:
