@@ -3,9 +3,9 @@ name: First WorkFlow
 on:
   pull_request_review_comment:
     types:
-      - submitted
+      - created
       - edited
-      - dismissed
+      - deleted
   
 
 jobs:
