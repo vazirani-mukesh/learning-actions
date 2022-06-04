@@ -6,7 +6,7 @@ on:
       - created
       - edited
       - deleted
-    lables:
+    labels:
       - documentation
       - bug
   
