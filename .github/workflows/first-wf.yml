@@ -1,8 +1,11 @@
 name: First WorkFlow
 
 on:
-  repository_dispatch:
-    types: [trigger]
+  pull_request_comment:
+    types:
+      - edited
+      - deleted
+  
 
 jobs:
   my-job:
