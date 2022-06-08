@@ -2,9 +2,9 @@ name: First WorkFlow
 
 on:
   push:
-    branches:
-      - main
-      - test
+    #branches:
+    #  - main
+    #  - test
     paths: ['./**/*.yml']
   
 
