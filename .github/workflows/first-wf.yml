@@ -1,14 +1,7 @@
 name: First WorkFlow
 
 on:
-  pull_request_review_comment:
-    types:
-      - created
-      - edited
-      - deleted
-    labels:
-      - documentation
-      - bug
+  workflow_dispatch:
   
 
 jobs:
@@ -24,6 +17,3 @@ jobs:
       - name: PWSH Shell
         run: Get-ChildItem
         shell: pwsh
-      - name: Print Payload Varibales
-        run: echo ${{ github.event.client_payload.environment }}
-        shell: bash
