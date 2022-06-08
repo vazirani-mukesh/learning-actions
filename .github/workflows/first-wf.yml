@@ -6,6 +6,9 @@ on:
       - main
       - test
     paths: ['**/*.yml']
+  pull_request:
+    branches:
+      - test
   
 
 jobs:
