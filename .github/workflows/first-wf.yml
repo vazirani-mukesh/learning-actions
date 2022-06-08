@@ -2,8 +2,6 @@ name: First WorkFlow
 
 on:
   push:
-    tags:
-      - '**'
     branches:
       - master
       - test
