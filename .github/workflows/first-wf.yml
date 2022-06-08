@@ -1,17 +1,8 @@
 name: First WorkFlow
 
 on:
-  #push:
-    #branches:
-    #  - main
-    #  - test
-    #paths: ['**/*.yml']
-  pull_request:
-    branches:
-      - test
-    types: [opened, closed]
+  workflow_dispatch:
   
-
 jobs:
   my-job:
     runs-on: ubuntu-latest
