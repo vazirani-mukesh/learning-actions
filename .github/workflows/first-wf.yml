@@ -5,8 +5,7 @@ on:
     branches:
       - main
       - test
-    paths:
-      - '**/*.yml'
+    paths: '**/*.yml'
   
 
 jobs:
