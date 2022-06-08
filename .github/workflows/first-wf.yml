@@ -5,8 +5,7 @@ on:
     branches:
       - master
       - test
-    paths: [test.yml, test2.yml]
-    types: test
+    paths: ['*.yml']
   
 
 jobs:
