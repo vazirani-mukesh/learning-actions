@@ -1,7 +1,14 @@
 name: First WorkFlow
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - '**'
+    branches:
+      - master
+      - test
+    paths: [test.yml, test2.yml]
+    types: test
   
 
 jobs:
