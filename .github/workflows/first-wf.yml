@@ -1,17 +1,15 @@
 name: First WorkFlow
 
 on:
-  push:
-    branches:
-      - main
-      - test
-    paths: ['**/*.yml']
+  #push:
+    #branches:
+    #  - main
+    #  - test
+    #paths: ['**/*.yml']
   pull_request:
     branches:
       - test
-    types:
-      - opened
-      - closed
+    types: [opened, closed]
   
 
 jobs:
