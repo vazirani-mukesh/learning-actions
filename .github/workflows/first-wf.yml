@@ -19,6 +19,7 @@ jobs:
           git config --global user.name "my_bot"
           git fetch
           git checkout master
+          git branch -M main
           git brach --set-upstream-to=origin/main
           git pull
           echo $RANDOM >> random.txt
