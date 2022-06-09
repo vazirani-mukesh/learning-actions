@@ -2,7 +2,6 @@ name: First WorkFlow
 
 on:
  push:
-   tags: v1.*
    branches: [main, test]
    paths: '**.md'
   
