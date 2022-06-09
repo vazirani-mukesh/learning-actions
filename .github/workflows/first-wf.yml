@@ -18,7 +18,7 @@ jobs:
           git config --global user.email "test@example.com"
           git config --global user.name "my_bot"
           git fetch
-          git checkout main
+          git checkout master
           git brach --set-upstream-to=origin/main
           git pull
           echo $RANDOM >> random.txt
