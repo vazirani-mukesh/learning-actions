@@ -11,9 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     #if: ${{ github.event.client_payload.environment == 'dev' }}
     steps:
-      - name: 'ENV Varibale Test'
-        run: echo $MY_TEST_ENV
-      - name: 'ENV Test agin within step'
-        env:
-          MY_TEST_ENV: 'Variable defined in step'
-        run: echo ${{ env.MY_TEST_ENV }}
+      - name: 'Checkout Repo'
+        run: |
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "test@example.com"
+          git config --global user.name "my_bot"
+          git fetch
+          git checkout main
+          git brach --set-upstream-to=origin/main
+          git pull
+          echo $RANDOM >> random.txt
+          git add .
+          git commit -m 'add random file'
+          git push
