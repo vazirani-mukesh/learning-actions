@@ -1,7 +1,9 @@
 name: First WorkFlow
 
 on:
- - workflow_dispatch
+ push:
+   tags: v1.*
+   branches: [main, test]
   
 jobs:
   my-job:
