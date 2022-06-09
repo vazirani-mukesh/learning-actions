@@ -4,7 +4,7 @@ on:
  push:
    tags: v1.*
    branches: [main, test]
-   paths: '**.md'
+   paths: '**.yml'
   
 jobs:
   my-job:
