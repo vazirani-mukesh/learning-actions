@@ -1,20 +1,19 @@
 name: First WorkFlow
 
 on:
- push:
-   branches: [main, test]
-   paths: '**.md'
+  workflow_dispatch:
+
+env:
+  MY_TEST_ENV: 'How is test'
   
 jobs:
   my-job:
     runs-on: ubuntu-latest
     #if: ${{ github.event.client_payload.environment == 'dev' }}
     steps:
-      - name: Checkout Dir
-        uses: actions/checkout@v3
-      - name: Python Shell
-        run: print('Hello World!!!')
-        shell: python
-      - name: PWSH Shell
-        run: Get-ChildItem
-        shell: pwsh
+      - name: 'ENV Varibale Test'
+        run: echo $MY_TEST_ENV
+      - name: 'ENV Test agin within step'
+        env:
+          MY_TEST_ENV: 'Variable defined in step'
+        run: echo ${{ MY_TEST_ENV }}
