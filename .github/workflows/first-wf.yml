@@ -16,4 +16,4 @@ jobs:
       - name: 'ENV Test agin within step'
         env:
           MY_TEST_ENV: 'Variable defined in step'
-        run: echo ${ MY_TEST_ENV }
+        run: echo ${MY_TEST_ENV}
