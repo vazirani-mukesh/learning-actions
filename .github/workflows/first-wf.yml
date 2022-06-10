@@ -10,7 +10,7 @@ jobs:
       -  name: test conditions
          run: |
            echo ${{ startsWith('Hello', 'He') }}
-           echo ${{ conatins('Hello', 'ell') }}
+           echo ${{ contains('Hello', 'ell') }}
            echo ${{ ensWith("Hello", "lo") }}
            echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!') }}
       - name: test cancel
