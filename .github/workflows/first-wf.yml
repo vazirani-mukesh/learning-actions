@@ -1,27 +1,24 @@
-name: First WorkFlow
+name: check conditions
 
 on:
-  workflow_dispatch:
-
-env:
-  MY_TEST_ENV: 'How is test'
+  push:
   
 jobs:
-  my-job:
+  myconditions:
     runs-on: ubuntu-latest
-    #if: ${{ github.event.client_payload.environment == 'dev' }}
     steps:
-      - name: 'Checkout Repo'
+      -  name: test conditions
+         run: |
+           echo ${{ startsWith('Hello', 'He') }}
+           echo ${{ conatins('Hello', 'ell') }}
+           echo ${{ ensWith("Hello", "lo") }}
+           echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!') }}
+      - name: test cancel
+        if: cancelled()
         run: |
-          git init
-          git remote add origin "https://$GITHUB_ACTOR:${{ github.token }}@github.com/$GITHUB_REPOSITORY.git"
-          git config --global user.email "test@example.com"
-          git config --global user.name "my_bot"
-          git fetch
-          git checkout main
-          git branch --set-upstream-to=origin/main
-          git pull
-          echo $RANDOM >> random.txt
-          git add .
-          git commit -m 'add random file'
-          git push
+          echo ${{ 'Job was cancelled' }}
+      - name: test failure
+        if: failure()
+        run: |
+          echo 'Step was failed'
+          
