@@ -9,10 +9,10 @@ jobs:
     steps:
       -  name: test conditions
          run: |
-           echo ${{ startsWith('Hello', 'He') }}
-           echo ${{ contains('Hello', 'ell') }}
-           echo ${{ endsWith('Hello', 'lo') }}
-           echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!') }}
+           eccho ${{ startsWith('Hello', 'He') }}
+           eccho ${{ contains('Hello', 'ell') }}
+           eccho ${{ endsWith('Hello', 'lo') }}
+           eccho ${{ format('Hello {0} {1} {2}', 'World', '!', '!') }}
       - name: test cancel
         if: cancelled()
         run: |
