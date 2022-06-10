@@ -2,6 +2,7 @@ name: check conditions
 
 on:
   push:
+  workflow_dispatch:
   
 jobs:
   myconditions:
