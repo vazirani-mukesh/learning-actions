@@ -21,7 +21,7 @@ jobs:
       - name: container in step
         uses: docker://node:16-alpine
         with:
-          entrypoint: '/usr/bin/node'
+          entrypoint: '/usr/local/bin/node'
           args: '-v'
       - name: container in step 2
         uses: docker://node:lts-alpine3.16
