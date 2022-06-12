@@ -11,7 +11,7 @@ jobs:
       - name: upload-image
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: my-iamge
+          name: my-image
           path: image.jpg
   download-artifact:
     runs-on: ubuntu-latest
