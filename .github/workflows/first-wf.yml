@@ -22,7 +22,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v2
         with:
-          node_version: ${{ matrix.node_version }}
+          node-version: ${{ matrix.node_version }}
       - name: Echo Node Version
         run: |
           node -v
