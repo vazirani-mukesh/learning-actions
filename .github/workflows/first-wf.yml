@@ -1,32 +1,25 @@
-name: container workflow
+name: artifact check
 
 on: push
 
-#env:
-#  MY_VAR: 'WF VAR'
-
 jobs:
-  container-wf:
+  upload-artifact:
     runs-on: ubuntu-latest
-    #env:
-    #  MY_VAR: 'Job level var'
-    container:
-     image: node:14.19-alpine3.16
-     env:
-       MY_VAR: 'this is container_var'
     steps:
-      - name: display node version
-        #env:
-        #  MY_VAR: 'step 1 var'
-        run: |
-          node -v
-          echo $MY_VAR
-          cat /etc/os-release
-      - name: container in step
-        uses: docker://node:lts-buster-slim
-        env:
-          MY_VAR: 'Varibale in container step'
+      - name: download image
+        run: wget -O image.jpg https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg
+      - name: upload-image
+        uses: actions/upload-arifact@v3
         with:
-          entrypoint: '/bin/echo'
-          args: $MY_VAR
-        
+          name: my-iamge
+          path: image.jpg
+  download-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: down-image
+        uses: actions/download-artifact@v1
+        with:
+          name: my-image
+          path: my-images/
+      - name: list image
+        run: ls -la my-images/
