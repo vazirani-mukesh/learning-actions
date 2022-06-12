@@ -12,6 +12,8 @@ jobs:
         MY_VAR: 'this is myvar'
     steps:
       - name: display node version
+        env:
+          MY_VAR: 'inside step var'
         run: |
           node -v
           echo $MY_VAR
