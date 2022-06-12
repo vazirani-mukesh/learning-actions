@@ -2,8 +2,8 @@ name: container workflow
 
 on: push
 
-env:
-  MY_VAR: 'WF VAR'
+#env:
+#  MY_VAR: 'WF VAR'
 
 jobs:
   container-wf:
@@ -27,6 +27,6 @@ jobs:
         env:
           MY_VAR: 'Varibale in container step'
         with:
-          entrypoint: '/bin/declare'
-          args: '-p'
+          entrypoint: '/bin/echo'
+          args: $MY_VAR
         
