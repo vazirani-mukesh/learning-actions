@@ -6,8 +6,8 @@ on:
 jobs:
   container-wf:
     runs-on: ubuntu-latest
-    env:
-      MY_VAR: 'Job level var'
+    #env:
+    #  MY_VAR: 'Job level var'
     container:
       image: node:14.19-alpine3.16
       env:
