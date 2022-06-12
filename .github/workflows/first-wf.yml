@@ -9,15 +9,16 @@ jobs:
       - name: download image
         run: wget -O image.jpg https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg
       - name: upload-image
-        uses: actions/upload-arifact@v3
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: my-iamge
           path: image.jpg
   download-artifact:
     runs-on: ubuntu-latest
+    needs: upload-artifact
     steps:
       - name: down-image
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3.0.0
         with:
           name: my-image
           path: my-images/
