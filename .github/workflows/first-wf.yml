@@ -20,9 +20,9 @@ jobs:
           cat /etc/os-release
       - name: container in step
         uses: docker://node:lts-buster-slim
-        env:
-          MY_VAR: 'Varibale in container step'
+        #env:
+        #  MY_VAR: 'Varibale in container step'
         with:
           entrypoint: '/bin/echo'
-          args: MY_VAR
+          args: $MY_VAR
         
