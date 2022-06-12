@@ -17,4 +17,5 @@ jobs:
         run: |
           node -v
           echo $MY_VAR
+          cat /etc/os-release
         
