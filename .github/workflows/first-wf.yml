@@ -27,5 +27,6 @@ jobs:
         env:
           MY_VAR: 'Varibale in container step'
         with:
-          entrypoint: '/bin/printenv'
+          entrypoint: '/bin/declare'
+          args: '-p'
         
