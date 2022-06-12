@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download image
-        run: wget -O image.jpg https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg
+        run: wget -O image.jpg https://unsplash.com/photos/j2RgHfqKhCM/download?force=true
       - name: upload-image
         uses: actions/upload-artifact@v3.1.0
         with:
