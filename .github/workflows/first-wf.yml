@@ -24,7 +24,7 @@ jobs:
           entrypoint: '/usr/local/bin/node'
           args: '-v'
       - name: container in step 2
-        uses: docker://node:lts-alpine3.16
+        uses: docker://node:lts-buster-slim
         with:
           entrypoint: '/bin/cat'
           args: '/etc/os-release'
