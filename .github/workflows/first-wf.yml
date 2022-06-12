@@ -23,6 +23,5 @@ jobs:
         #env:
         #  MY_VAR: 'Varibale in container step'
         with:
-          entrypoint: '/bin/echo'
-          args: $MY_VAR
+          entrypoint: '/bin/printenv'
         
