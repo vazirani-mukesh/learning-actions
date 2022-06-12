@@ -1,7 +1,9 @@
 name: container workflow
 
-on:
-  workflow_dispatch:
+on: push
+
+env:
+  MY_VAR: 'WF VAR'
 
 jobs:
   container-wf:
@@ -14,14 +16,16 @@ jobs:
        MY_VAR: 'this is myvar'
     steps:
       - name: display node version
+        env:
+          MY_VAR: 'step 1 var'
         run: |
           node -v
           echo $MY_VAR
           cat /etc/os-release
       - name: container in step
         uses: docker://node:lts-buster-slim
-        #env:
-        #  MY_VAR: 'Varibale in container step'
+        env:
+          MY_VAR: 'Varibale in container step'
         with:
           entrypoint: '/bin/printenv'
         
